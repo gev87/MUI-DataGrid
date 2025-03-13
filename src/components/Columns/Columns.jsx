@@ -1,9 +1,8 @@
 import React from "react";
-import { Typography, useTheme } from "@mui/material";
+import { Typography } from "@mui/material";
+import styles from "./Columns.module.css";
 
 function Columns({ onImageClick }) {
-  const theme = useTheme();
-
   return [
     {
       field: "image",
@@ -15,12 +14,7 @@ function Columns({ onImageClick }) {
           <img
             src={params.value}
             alt="poster"
-            style={{
-              width: "100%",
-              objectFit: "contain",
-              cursor: "pointer",
-              marginTop: "10px",
-            }}
+            className={styles.imageCell}
             onClick={(event) => {
               event.stopPropagation();
               onImageClick(params.value);
@@ -35,16 +29,7 @@ function Columns({ onImageClick }) {
       headerName: "Description",
       width: 200,
       renderCell: (params) => (
-        <Typography
-          style={{
-            fontStyle: "italic",
-            color: theme.palette.text.primary,
-            whiteSpace: "normal",
-            wordWrap: "break-word",
-            display: "block",
-            cursor: "pointer",
-          }}
-        >
+        <Typography className={styles.descriptionCell}>
           {params.value}
         </Typography>
       ),
@@ -54,22 +39,15 @@ function Columns({ onImageClick }) {
       headerName: "Release Date",
       width: 150,
       renderCell: (params) => (
-        <Typography
-          style={{ fontWeight: "bold", color: theme.palette.primary.main , cursor: "pointer" }}
-        >
-          {params.value}
-        </Typography>
+        <Typography className={styles.dateCell}>{params.value}</Typography>
       ),
     },
     {
       field: "number",
       headerName: "Rating",
       width: 120,
-
       renderCell: (params) => (
-        <Typography style={{ color: theme.palette.text.secondary, cursor: "pointer" }}>
-          {params.value}
-        </Typography>
+        <Typography className={styles.ratingCell}>{params.value}</Typography>
       ),
     },
   ];

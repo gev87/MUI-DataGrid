@@ -1,0 +1,27 @@
+.imageCell {
+  width: 100%;
+  object-fit: contain;
+  cursor: pointer;
+  margin-top: 10px;
+  max-height: calc(100% - 15px);
+}
+
+.descriptionCell {
+  font-style: italic;
+  color: var(--text-primary);
+  white-space: normal;
+  word-wrap: break-word;
+  display: block;
+  cursor: pointer;
+}
+
+.dateCell {
+  font-weight: bold;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.ratingCell {
+  color: var(--text-secondary);
+  cursor: pointer;
+}

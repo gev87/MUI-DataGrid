@@ -1,4 +1,3 @@
-// src/App.jsx
 import React, { useState, useMemo, useEffect } from "react";
 import {
   createTheme,
@@ -11,22 +10,20 @@ import {
   Container,
 } from "@mui/material";
 import DataTable from "./components/DataTable";
+import styles from "./App.module.css"; 
 
-// Function to generate the theme
 const getTheme = (darkMode) =>
   createTheme({
     palette: {
       mode: darkMode ? "dark" : "light",
-      primary: {
-        main: "f50057",
-      },
+      primary: { main: "#f50057" },
       background: {
         default: darkMode ? "#121212" : "#f5f5f5",
         paper: darkMode ? "#1e1e1e" : "#ffffff",
       },
       text: {
         primary: darkMode ? "#ffffff" : "#000000",
-        secondary:"#4caf50",
+        secondary: "#4caf50",
       },
     },
   });
@@ -40,15 +37,26 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem("darkMode", JSON.stringify(darkMode));
+    document.documentElement.setAttribute(
+      "data-theme",
+      darkMode ? "dark" : "light"
+    );
   }, [darkMode]);
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppBar position="static" color="primary">
+      <style>
+        {`:root {
+          --primary-color: ${theme.palette.primary.main};
+          --text-primary: ${theme.palette.text.primary};
+          --text-secondary: ${theme.palette.text.secondary};
+        }`}
+      </style>
+      <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            MUI DataGrid Example
+          <Typography variant="h6" className={styles.title}>
+           Movie List
           </Typography>
           <Switch
             checked={darkMode}
@@ -57,19 +65,11 @@ function App() {
           />
         </Toolbar>
       </AppBar>
-      <Container maxWidth="lg" sx={styles.container}>
+      <Container maxWidth="lg" className={styles.appContainer}>
         <DataTable />
       </Container>
     </ThemeProvider>
   );
 }
-
-const styles = {
-  container: {
-    padding: "16px",
-    borderRadius: "8px",
-    marginTop: "16px",
-  },
-};
 
 export default App;

@@ -1,12 +1,34 @@
-# React + Vite
+# MUI DataGrid Table Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project implements a data table using React and Material-UI's DataGrid component, fulfilling the requirements of test assignment .
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   DataGrid with 4 columns (image, text, date, number).
+-   Column filtering and sorting.
+-   Custom text column styling.
+-   Dynamic row height (100-300px).
+-   Modal on row click (row data).
+-   Modal on image click (full-size image).
+-   Bonuses:
+    -   State persistence (sorting, filtering).
+    -   Dark/light theme toggle.
+    -   Data fetched from an open API: [http://www.omdbapi.com](http://www.omdbapi.com) (Movie List).
 
-## Expanding the ESLint configuration
+## Setup
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1.  Clone the repo: `git clone [repo link]`
+2.  Install: `npm install`
+3.  Run: `npm run dev`
+4.  View: `http://localhost:5173`
+
+
+
+## Tech
+
+-   React
+-   Material-UI (MUI)
+
+## Author
+
+-   Gevorg Petrosyan
