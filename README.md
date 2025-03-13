@@ -22,6 +22,10 @@ This project implements a data table using React and Material-UI's DataGrid comp
 3.  Run: `npm run dev`
 4.  View: `http://localhost:5173`
 
+## Links
+
+-   Repo: https://github.com/gev87/MUI-DataGrid
+-   Live: [https://gev87.github.io/MUI-DataGrid/]
 
 
 ## Tech
